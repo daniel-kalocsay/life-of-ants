@@ -1,10 +1,7 @@
 package life_of_ants;
 
-import life_of_ants.insects.Insect;
-import life_of_ants.insects.ants.Drone;
-import life_of_ants.insects.ants.Queen;
-import life_of_ants.insects.ants.Soldier;
-import life_of_ants.insects.ants.Worker;
+import life_of_ants.insects.*;
+import life_of_ants.insects.ants.*;
 
 import java.util.ArrayList;
 
@@ -12,23 +9,32 @@ public class Colony {
 
     private ArrayList<Insect> insectsInColony = new ArrayList<>();
     private Queen queenOfColony;
-//    private Wasp asd = new Wasp();
+    private Wasp asd = new Wasp();
 
-    void simulateADay() {
-        for (int i = 0; i < 1; i++) simulateAnHour(i);
+    void simulateADay() throws InterruptedException {
+        for (int i = 0; i < 5; i++) {
+            simulateAnHour(i+1);
+            Thread.sleep(1000);
+        }
     }
 
-    private void simulateAnHour(int hourNum) {
+    private void simulateAnHour(int hourNum) throws InterruptedException {
+        System.out.println(String.format("Hour %s:\n", hourNum));
+
         for (Insect pleb : insectsInColony) {
             System.out.println("id: " + pleb.getId());
-            pleb.announceSelf();
+            pleb.introduceSelf();
 
+
+            System.out.println(String.format("pos: x: %s, y: %s", pleb.getPosX(), pleb.getPosY()));
             System.out.println("distance from queen: " + pleb.calculateDistanceFromQueen(this));
+
             pleb.spendAnHour();
             System.out.println("");
+            Thread.sleep(50);
         }
 
-        System.out.println(String.format("Hour %s has passed", hourNum+1));
+        System.out.println(String.format("Hour %s has passed", hourNum));
     }
 
     private void populateWithAnts(int numOfWorkers, int numOfSoldiers, int numOfDrones, Queen newQueen) {

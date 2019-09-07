@@ -13,13 +13,11 @@ public abstract class Insect {
     }
 
     protected int posX;
+    protected int posY;
 
     public int getPosX() {
         return posX;
     }
-
-    protected int posY;
-
     public int getPosY() {
         return posY;
     }
@@ -29,7 +27,7 @@ public abstract class Insect {
     }
 
     public abstract void spendAnHour();
-    public abstract void announceSelf();
+    public abstract void introduceSelf();
 
     protected abstract int calculateNextX();
     protected abstract int calculateNextY();

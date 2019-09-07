@@ -16,7 +16,7 @@ public class Wasp extends Insect{
         System.out.println(message);
     }
 
-    public void announceSelf() {
+    public void introduceSelf() {
         System.out.println("I'm a Wasp hurr durr!");
     }
 

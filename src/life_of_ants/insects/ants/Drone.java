@@ -13,7 +13,7 @@ public class Drone extends Ant {
         System.out.println(message);
     }
 
-    public void announceSelf() {
+    public void introduceSelf() {
         System.out.println("I'm a Drone!");
     }
 
