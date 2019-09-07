@@ -2,10 +2,12 @@ package life_of_ants;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("working!");
+        int numOfWorkers = 10;
+        int numOfSoldiers = 4;
+        int numOfDrones = 3;
 
-        Colony antColony = new Colony();
-
+        Colony antColony = new Colony(numOfWorkers, numOfSoldiers, numOfDrones);
         antColony.simulateADay();
+
     }
 }
