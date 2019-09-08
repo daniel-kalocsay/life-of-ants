@@ -1,5 +1,7 @@
 package life_of_ants.insects.ants;
 
+import life_of_ants.Colony;
+
 public class Queen extends Ant {
 
     public void communicate(String message) {
@@ -9,7 +11,7 @@ public class Queen extends Ant {
         System.out.println("I'm a lazy ass Queen!");
     }
 
-    public void spendAnHour() {
+    public void spendAnHour(Colony colony) {
         sitAndDoNothing();
     }
 

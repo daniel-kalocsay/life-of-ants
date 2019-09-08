@@ -1,5 +1,6 @@
 package life_of_ants.insects.ants;
 
+import life_of_ants.Colony;
 import life_of_ants.Util;
 
 public class Worker extends Ant {
@@ -11,8 +12,7 @@ public class Worker extends Ant {
         System.out.println("I'm a Worker!");
     }
 
-    public void spendAnHour() {
-
+    public void spendAnHour(Colony colony) {
         if (this.isFrozen()) moveTo(this.posX, this.posY);
         else moveRandomly();
     }

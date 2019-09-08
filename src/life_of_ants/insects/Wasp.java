@@ -12,7 +12,7 @@ public class Wasp extends Insect{
         System.out.println("I'm a Wasp hurr durr!");
     }
 
-    public void spendAnHour() {
+    public void spendAnHour(Colony colony) {
         wreakHavoc();
     }
 

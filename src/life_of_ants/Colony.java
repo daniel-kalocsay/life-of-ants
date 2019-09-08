@@ -26,7 +26,6 @@ public class Colony {
 
         for (Insect insect : insectsInColony) {
 
-
             System.out.println("id: " + insect.getId());
             insect.introduceSelf();
 
@@ -34,7 +33,7 @@ public class Colony {
             System.out.println(String.format("pos: x: %s, y: %s", insect.getPosX(), insect.getPosY()));
             System.out.println("distance from queen: " + insect.calculateDistanceFromQueen(this));
 
-            insect.spendAnHour();
+            insect.spendAnHour(this);
             System.out.println("");
 
             Thread.sleep(50);

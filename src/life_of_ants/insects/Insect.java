@@ -27,7 +27,7 @@ public abstract class Insect {
         setPosition(x, y);
     }
 
-    public abstract void spendAnHour();
+    public abstract void spendAnHour(Colony colony);
     public abstract void introduceSelf();
 
     protected void decideNextDirection(int direction) {
@@ -52,7 +52,6 @@ public abstract class Insect {
     public int getId() {
         return id;
     }
-
 
     public int calculateDistanceFromQueen(Colony colony) {
         Queen queen = colony.getQueen();
