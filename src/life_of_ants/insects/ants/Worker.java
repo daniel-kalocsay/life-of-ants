@@ -1,33 +1,24 @@
 package life_of_ants.insects.ants;
 
+import life_of_ants.Util;
+
 public class Worker extends Ant {
-
-    protected int calculateNextX() {
-        return (int) (Math.random() * 20);
-    }
-
-    protected int calculateNextY() {
-        return (int) (Math.random() * 20);
-    }
 
     public void communicate(String message) {
         System.out.println(message);
     }
-
     public void introduceSelf() {
         System.out.println("I'm a Worker!");
     }
 
-
     public void spendAnHour() {
 
         if (this.isFrozen()) moveTo(this.posX, this.posY);
-        else moveTo(calculateNextX(), calculateNextY());
+        else moveRandomly();
     }
 
-
-    public Worker() {
-        posX = 5;
-        posY = -5;
+    private void moveRandomly() {
+        int direction = Util.getIntegerBetween(0, 3);
+        decideNextDirection(direction);
     }
 }

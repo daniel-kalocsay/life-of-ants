@@ -4,14 +4,6 @@ import life_of_ants.Colony;
 
 public class Wasp extends Insect{
 
-    protected int calculateNextX() {
-        return 0;
-    }
-
-    protected int calculateNextY() {
-        return 0;
-    }
-
     public void communicate(String message) {
         System.out.println(message);
     }
@@ -21,8 +13,11 @@ public class Wasp extends Insect{
     }
 
     public void spendAnHour() {
-        if (this.isFrozen()) moveTo(this.posX, this.posY);
-        else moveTo(calculateNextX(), calculateNextY());
+        wreakHavoc();
+    }
+
+    private void wreakHavoc() {
+        System.out.println("REEEEEEEEEEEEEEEEEEEEEEE");
     }
 
 }

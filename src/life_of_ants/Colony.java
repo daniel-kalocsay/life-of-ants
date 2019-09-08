@@ -22,7 +22,11 @@ public class Colony {
     private void simulateAnHour(int hourNum) throws InterruptedException {
         System.out.println(String.format("Hour %s:\n", hourNum));
 
+//        if (hourNum == 3) insectsInColony.add(new Wasp());
+
         for (Insect insect : insectsInColony) {
+
+
             System.out.println("id: " + insect.getId());
             insect.introduceSelf();
 
@@ -32,6 +36,7 @@ public class Colony {
 
             insect.spendAnHour();
             System.out.println("");
+
             Thread.sleep(50);
         }
 

@@ -1,6 +1,7 @@
 package life_of_ants.insects;
 
 import life_of_ants.Colony;
+import life_of_ants.Util;
 import life_of_ants.insects.ants.Queen;
 
 public abstract class Insect {
@@ -29,8 +30,22 @@ public abstract class Insect {
     public abstract void spendAnHour();
     public abstract void introduceSelf();
 
-    protected abstract int calculateNextX();
-    protected abstract int calculateNextY();
+    protected void decideNextDirection(int direction) {
+        switch (direction) {
+            case 0:
+                moveTo(this.posX, this.posY + 1); // up
+                break;
+            case 1:
+                moveTo(this.posX + 1, this.posY); // right
+                break;
+            case 2:
+                moveTo(this.posX, this.posY - 1); // down
+                break;
+            case 3:
+                moveTo(this.posX - 1, this.posY); // left
+                break;
+        }
+    }
 
     public abstract void communicate(String message);
 
@@ -59,6 +74,9 @@ public abstract class Insect {
 
     protected Insect() {
         id = nextId++;
+
+        posX = Util.getIntegerBetween(-50, 50);
+        posY = Util.getIntegerBetween(-50, 50);
     }
 
 }
