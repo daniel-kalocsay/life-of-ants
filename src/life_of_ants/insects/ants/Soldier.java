@@ -4,8 +4,6 @@ import life_of_ants.Colony;
 import life_of_ants.insects.Insect;
 import life_of_ants.insects.Wasp;
 
-import java.util.ConcurrentModificationException;
-
 public class Soldier extends Ant {
     private int counter = 0;
 
@@ -48,14 +46,14 @@ public class Soldier extends Ant {
         decideNextDirection(direction);
     }
 
-    private void killWasp(Colony colony) throws ConcurrentModificationException {
-        communicate("HAJIME");
-        colony.removeWasp();
+    private void killWasp(Colony colony) {
 
         for (Insect insect : colony.getInsectsInColony()) {
             insect.unfreeze();
         }
 
+        communicate("HAJIME");
+        colony.removeWasp();
     }
 
 

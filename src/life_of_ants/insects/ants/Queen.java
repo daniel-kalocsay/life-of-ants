@@ -35,7 +35,7 @@ public class Queen extends Ant {
     }
 
     void startMating(Insect insect) {
-        communicate("i the queen started mating with a filthy pleb");
+        communicate("i the queen have started mating with this^ filthy pleb");
 
         currentlyMating = true;
         matingWith = insect;
@@ -61,7 +61,7 @@ public class Queen extends Ant {
 
     private void yeet(Insect poorInsect) {
         poorInsect.getYeeted();
-        communicate("i yeeted a pleb");
+        communicate(String.format("i yeeted a pleb with this id: %s", poorInsect.getId()));
     }
 
     public Queen() {

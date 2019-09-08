@@ -36,6 +36,7 @@ public class Drone extends Ant {
         else if (posX > 0) direction = 3; // left
 
         decideNextDirection(direction);
+        System.out.println("moving towards queen");
     }
 
     private void tryToMateWithQueen(Queen queen) {
@@ -70,8 +71,8 @@ public class Drone extends Ant {
     }
 
     public Drone() {
-        posX = Util.getIntegerBetween(-5, 5);
-        posY = Util.getIntegerBetween(-5, 5);
+        posX = Util.getIntegerBetween(-20, 20);
+        posY = Util.getIntegerBetween(-20, 20);
     }
 
 }
