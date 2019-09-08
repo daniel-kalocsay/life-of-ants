@@ -18,11 +18,8 @@ public class Queen extends Ant {
         return inTheMood;
     }
 
-    public void communicate(String message) {
-        System.out.println(message);
-    }
     public void introduceSelf() {
-        System.out.println("I'm a lazy ass Queen!");
+        communicate("I'm a lazy ass Queen!");
     }
 
     public void spendAnHour(Colony colony) {
@@ -34,11 +31,12 @@ public class Queen extends Ant {
     }
 
     private void sitAndDoNothing() {
-        System.out.println("Just here sitting on my lazy ass doing absolutely nothing at all");;
+        communicate("Just here sitting on my lazy ass doing absolutely nothing at all");;
     }
 
     void startMating(Insect insect) {
-        System.out.println("queen started mating with a filthy pleb");
+        communicate("i the queen started mating with a filthy pleb");
+
         currentlyMating = true;
         matingWith = insect;
     }
@@ -54,7 +52,7 @@ public class Queen extends Ant {
 
     private void keepMating() {
         if (matingDuration > 0) {
-            System.out.println("still mating");
+            communicate("still mating");
             matingDuration--;
         }
 
@@ -63,7 +61,7 @@ public class Queen extends Ant {
 
     private void yeet(Insect poorInsect) {
         poorInsect.getYeeted();
-        System.out.println("i yeeted a pleb");
+        communicate("i yeeted a pleb");
     }
 
     public Queen() {

@@ -5,11 +5,8 @@ import life_of_ants.Util;
 
 public class Worker extends Ant {
 
-    public void communicate(String message) {
-        System.out.println(message);
-    }
     public void introduceSelf() {
-        System.out.println("I'm a Worker!");
+        communicate("I'm a Worker!");
     }
 
     public void spendAnHour(Colony colony) {

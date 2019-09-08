@@ -7,12 +7,8 @@ public class Drone extends Ant {
     private boolean currentlyMating = false;
     private int matingDuration = 2;
 
-
-    public void communicate(String message) {
-        System.out.println(message);
-    }
     public void introduceSelf() {
-        System.out.println("I'm a Drone!");
+        communicate("I'm a Drone!");
     }
 
     public void spendAnHour(Colony colony) {

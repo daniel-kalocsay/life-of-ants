@@ -9,20 +9,24 @@ public class Colony {
 
     private ArrayList<Insect> insectsInColony = new ArrayList<>();
     private Queen queenOfColony;
+    private Wasp waspInColony;
 //    private Wasp asd = new Wasp();
 
     void simulateADay() throws InterruptedException {
         //should be i < 24
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 24; i++) {
             simulateAnHour(i+1);
-            Thread.sleep(1000);
+            Thread.sleep(200);
         }
     }
 
     private void simulateAnHour(int hourNum) throws InterruptedException {
         System.out.println(String.format("Hour %s:\n", hourNum));
 
-//        if (hourNum == 3) insectsInColony.add(new Wasp());
+        if (hourNum == 3) {
+            waspInColony = new Wasp();
+            insectsInColony.add(waspInColony);
+        }
 
         for (Insect insect : insectsInColony) {
 
@@ -66,5 +70,16 @@ public class Colony {
 
     public Queen getQueen() {
         return queenOfColony;
+    }
+    public Wasp getWasp() {
+        return waspInColony;}
+
+    public ArrayList<Insect> getInsectsInColony() {
+        return insectsInColony;
+    }
+
+    public void removeWasp() {
+        insectsInColony.remove(insectsInColony.size()-1);
+        waspInColony = null;
     }
 }

@@ -56,7 +56,9 @@ public abstract class Insect {
         }
     }
 
-    public abstract void communicate(String message);
+    public void communicate(String message) {
+        System.out.println(message);
+    }
 
     public int getId() {
         return id;
@@ -76,7 +78,7 @@ public abstract class Insect {
         isFrozen = true;
     };
 
-    protected void unfreeze() {
+    public void unfreeze() {
         isFrozen = false;
     }
 
