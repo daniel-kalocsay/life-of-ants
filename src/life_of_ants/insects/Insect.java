@@ -12,6 +12,7 @@ public abstract class Insect {
     protected boolean isFrozen() {
         return isFrozen;
     }
+    protected String imFrozen = "I'm frozen";
 
     protected int posX;
     protected int posY;
@@ -21,6 +22,14 @@ public abstract class Insect {
     }
     public int getPosY() {
         return posY;
+    }
+
+    public void getYeeted() {
+        int randomNum1 = Util.getIntegerBetween(1, 50);
+        int randomNum2 = 50-randomNum1;
+
+        posX = randomNum1;
+        posY = randomNum2;
     }
 
     protected void moveTo(int x, int y) {

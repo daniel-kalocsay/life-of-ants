@@ -13,7 +13,7 @@ public class Soldier extends Ant {
     }
 
     public void spendAnHour(Colony colony) {
-        if (this.isFrozen()) moveTo(this.posX, this.posY);
+        if (this.isFrozen()) System.out.println("go for wasp");
         else decideNextDirection(counter % 4);
 
         counter++;

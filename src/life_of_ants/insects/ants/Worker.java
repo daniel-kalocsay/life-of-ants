@@ -13,7 +13,7 @@ public class Worker extends Ant {
     }
 
     public void spendAnHour(Colony colony) {
-        if (this.isFrozen()) moveTo(this.posX, this.posY);
+        if (this.isFrozen() ) communicate(imFrozen);
         else moveRandomly();
     }
 
